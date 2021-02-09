@@ -66,7 +66,7 @@ def get_github_repos_info(login):
         return {"result": "User not found", "status": 500}
 
     if repos_count == 0:
-        return {"repo_info": [], "status": 200}
+        return {"repo_info":[], "status": 200}
     query = """
     query {
       repositoryOwner (login: "%s") {
