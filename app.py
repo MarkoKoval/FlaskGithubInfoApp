@@ -37,6 +37,7 @@ def get_github_name(login):
     }
     """ % login
     result = run_query(query)
+    print(result)
     return {"user": result["data"]["user"], "status": 200 if result["data"]["user"] else 500}
 
 
