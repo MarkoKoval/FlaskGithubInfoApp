@@ -21,6 +21,11 @@ def run_query(query):
         return type_exception
 
 
+@app.route('/test', methods=["GET"])
+def test():
+    return {"test":"test"}
+
+
 @app.route('/users/<login>', methods=["GET"])
 def get_github_name(login):
     """ guery to get github name of user """
