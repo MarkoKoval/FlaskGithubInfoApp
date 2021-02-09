@@ -1,10 +1,9 @@
 """ flask app to get responses for github requests"""
 from flask import Flask
 import requests
-from flask_cors import CORS
+
 
 app = Flask(__name__)
-CORS(app)
 headers = {"Authorization": "Bearer 2bc9223a2dc38eeb2e76fb9cd046b9f9d07d1bf7"}
 
 
