@@ -2,9 +2,8 @@
 from flask import Flask
 import requests
 
-
 app = Flask(__name__)
-headers = {"Authorization": "Bearer b3e7bb8132901122d4451aaf4121867e5616b38f"}
+headers = {"Authorization": "Bearer f90ca515fa0f9d3f52565f68015baeed11e86958"}
 
 
 def run_query(query):
@@ -19,6 +18,8 @@ def run_query(query):
         return value_exception
     except TypeError as type_exception:
         return type_exception
+    except Exception as basic_exception:
+        return basic_exception
 
 
 @app.route('/users/<login>', methods=["GET"])
@@ -66,7 +67,7 @@ def get_github_repos_info(login):
         return {"result": "User not found", "status": 500}
 
     if repos_count == 0:
-        return {"repo_info":[], "status": 200}
+        return {"repo_info": [], "status": 200}
     query = """
     query {
       repositoryOwner (login: "%s") {
