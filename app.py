@@ -4,7 +4,7 @@ import requests
 
 
 app = Flask(__name__)
-headers = {"Authorization": "Bearer 2bc9223a2dc38eeb2e76fb9cd046b9f9d07d1bf7"}
+headers = {"Authorization": "Bearer b3e7bb8132901122d4451aaf4121867e5616b38f"}
 
 
 def run_query(query):
@@ -21,11 +21,6 @@ def run_query(query):
         return type_exception
 
 
-@app.route('/test', methods=["GET"])
-def test():
-    return {"test":"test"}
-
-
 @app.route('/users/<login>', methods=["GET"])
 def get_github_name(login):
     """ guery to get github name of user """
@@ -37,7 +32,6 @@ def get_github_name(login):
     }
     """ % login
     result = run_query(query)
-    print(result)
     return {"user": result["data"]["user"], "status": 200 if result["data"]["user"] else 500}
 
 
