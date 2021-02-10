@@ -18,7 +18,8 @@ class TestGithubApi(unittest.TestCase):
         self.assertIsNone(app.get_github_name("undefined_user12345")["user"])
 
     def test_get_github_repos_count_positive(self):
-        """ test that repository count for specified existed user is not None """
+        """ test that repository count for s
+        pecified existed user is not None """
         self.assertIsNotNone(app.get_github_repos_count("dhh")["count"])
 
     def test_get_github_repos_count_negative(self):
