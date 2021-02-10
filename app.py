@@ -3,7 +3,7 @@ from flask import Flask
 import requests
 
 app = Flask(__name__)
-headers = {"Authorization": "Bearer f90ca515fa0f9d3f52565f68015baeed11e86958"}
+headers = {"Authorization": "Bearer 8c09d6027d284bb0af8787ade74241aa93501879"}
 
 
 def run_query(query):
